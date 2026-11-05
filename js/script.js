@@ -1,3 +1,6 @@
+const theme = localStorage.getItem('theme') || "1"
+dark(theme)
+
 function dark(valor) {
     const body = document.getElementById('body')
     const cards = document.querySelectorAll('.card')
@@ -11,6 +14,7 @@ function dark(valor) {
             const boton = card.querySelector('button')
             boton.classList.replace('btn-outline-light', 'btn-danger')
         })
+        localStorage.setItem('theme', '1')
         return
     }
 
@@ -22,6 +26,7 @@ function dark(valor) {
             const boton = card.querySelector('button')
             boton.classList.replace('btn-danger', 'btn-outline-light')
         })
+        localStorage.setItem('theme', '2')
         return
     }
 }
